@@ -27,14 +27,6 @@ change.addEventListener("click", () => {
 });
 
 
-container.addEventListener("mouseover", (e) => {
-    //e (callback function) gives information on the cell clicked. 
-    let cellID = e.path[0]["id"];
-     console.log(cellID);
-     let cell = document.getElementById(cellID);
-     cell.style.cssText = "background-color: black";
-});
-
 function clearing(){
     let rows = getComputedStyle(container).getPropertyValue("--grid-rows");
     for (c=0; c < rows**2; c++){
@@ -46,3 +38,24 @@ function clearing(){
 
 const clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", () => clearing() );
+
+let erase = false;
+const eraserButton = document.getElementById("eraser");
+eraserButton.addEventListener("click", () => {
+    eraserButton.classList.toggle("eraser");
+    erase = !erase;
+});
+
+
+container.addEventListener("mouseover", (e) => {
+    //e (callback function) gives information on the cell clicked. 
+    let cellID = e.path[0]["id"];
+     console.log(cellID);
+     let cell = document.getElementById(cellID);
+     if (!erase){
+        cell.style.cssText = "background-color: black";
+     }
+     else{
+        cell.style.cssText = "background-color: white";
+     }
+});

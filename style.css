@@ -50,7 +50,7 @@ body > header{
     border: black solid 2px;
     border-radius: 4px;
     box-shadow: 0 0 5px black, 0 0 5px black inset;
-}
+} 
 
 .main-container {
     height: 450px;
@@ -71,4 +71,10 @@ body > header{
     border: 1px solid black;
     text-align: center;
     background-color: white;
+}
+
+.eraser {
+    border: black solid 2px;
+    border-radius: 4px;
+    box-shadow: 0 0 15px black, 0 0 15px black inset;
 }
